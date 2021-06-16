@@ -5,23 +5,45 @@
     --color-4: #002D72;
     --color-5: #284898;
     --color-6: #6f263d;
-    --color-7: #6BACE4;
+    --color-7: #6babe4;
     --bgcolor: var(--color-6);
     --hdcolor: var(--color-7);
     --nvcolor: var(--color-5);
+    --panelshade: #0000007f; 
     --header-indent: 10px;
+    --smallfontsize: 65%;
+    --footerfontsize: calc(var(--smallfontsize) - 15%);
+    --profileimgsize: 200px;
 }
 * {
     font-size: 24px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
     margin: 0;
-
 }
 html {
     background-color: var(--bgcolor);
 }
-
+body {
+    background-image: linear-gradient(var(--color-3), var(--bgcolor));
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+main section {
+    display: flex;
+    width: 100%;
+}
+main > section:hover {
+    background-color: var(--panelshade);
+}
+main section h2 {
+    display: flex;
+    justify-content: left;
+    margin-left: var(--header-indent);
+}
 h1, h2 {
     color: var(--hdcolor);
 }
@@ -29,46 +51,51 @@ a {
     text-decoration: none;
     color: var(--color-2);
 }
-body {
-    background-image: linear-gradient(var(--color-3), var(--bgcolor));
-}
-body > * {
-    width: 100%;
-}
-main {
-    display: flex;
-    flex-wrap: wrap;
-}
-main > * {
-    width: 100%;
-}
 /* ############################################# */
 /* Styling the Header Section */
 header {
     display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    margin-bottom: var(--header-indent);
     background-image: url('../img/skyline.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 350px;
 }
 header h1 {
-    justify-content: flex-start;
-    align-content: flex-end;
-    flex-grow: 1;
-    flex-shrink: 1;
-    margin: 0;
-    padding-top: 100;
-    background-image: url('../img/headshot.png');
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    background-size:150px;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    height: fit-content;
+    margin-left: var(--header-indent);
+    margin-top: var(--header-indent);
+    max-width: 40%;
+}
+header img {
+    width: var(--profileimgsize);
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
 }
 header nav {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    margin-top: var(--header-indent);
+    max-width: 60%;
+}
+header nav ul {
+    list-style-type: none;
     display: flex;
-    justify-content: flex-end;
     flex-wrap: wrap;
-    flex-shrink: 1;
+    justify-content: flex-end;
+    align-content:flex-start;
 }
 header nav a {
     display: inline-block;
@@ -80,6 +107,7 @@ header nav a {
     font-weight: 900;
     height: fit-content;
     width: 145px;
+    margin-bottom: 25%;
     padding: 3;
 }
 header nav a:hover {
@@ -89,46 +117,27 @@ header nav a:hover {
 }
 /* ############################################# */
 /* Styling the About Me Section */
-#AboutMe {
-    display: block;
-    width: 100%;
-}
-#AboutMe:hover {
-    background-color: rgba(0,0,0,0.5);
-}
-#AboutMe > * {
+#AboutMe p {
+    color: var(--color-1);
+    font-size: var(--smallfontsize);
     display: flex;
     justify-content: left;
     margin-left: var(--header-indent);
-}
-#AboutMe p {
-    color: var(--color-1);
-    font-size: 70%;
 }
 /* ############################################# */
 /* Styling the My Work Section */
-#MyWork {
-    display: block;
-    width: 100%;
-}
-#MyWork:hover {
-    background-color: rgba(0,0,0,0.5);
-}
-#MyWork > * {
-    display: flex;
-    justify-content: left;
-    margin-left: var(--header-indent);
-}
 .cards {
     display: flex;
     flex-wrap: wrap;
+    margin-left: var(--header-indent);
 }
 .card {
     display: flex;
     position: relative;
+    justify-content: left;
+    margin: var(--header-indent);
     flex-grow: 1;
     flex-shrink: 1;
-    margin: 5px;
     min-width: 200px;
     min-height: 200px;
 
@@ -136,7 +145,7 @@ header nav a:hover {
 .card img {
     flex-grow: 1;
     flex-shrink: 1;
-    width: 100%;
+    width: fit-content;
 
 }
 .card > h3 {
@@ -149,32 +158,18 @@ header nav a:hover {
     max-width: fit-content;
     background-color: rgba(0,0,0,0.7);
     color: var(--color-1);
-    font-size: 75%;
-
+    font-size: var(--smallfontsize);
 }
 .card:first-of-type {
     width: 100%;
 }
 /* ############################################# */
 /* Styling the Contact Me Section */
-#ContactMe {
-    display: block;
-    width: 100%;
-}
-#ContactMe:hover {
-    background-color: rgba(0,0,0,0.5);
-}
-#ContactMe > * {
-    display: flex;
-    margin-left: var(--header-indent);
-    flex-wrap: wrap;
-}
-#ContactMe h2 {
-    justify-content: left;
-}
 #ContactMe ul {
+    display: flex;
     justify-content: left;
     flex-wrap: wrap;
+    margin-left: calc(var(--header-indent) - 5px);
 }
 #ContactMe ul li {
     list-style-type: none;
@@ -183,39 +178,37 @@ header nav a:hover {
     text-decoration: underline;
     font-size: 70%;
 }
-#ContactMe ul li a {
-    font-size: inherit;
-}
 #ContactMe ul li:hover {
+    background-color: var(--color-2);
     color: var(--color-1);
     text-decoration: overline;
     opacity: 85%;
-    background-color: var(--color-2);
 }
-#ContactMe ul li:active {
-    user-select: all;
+#ContactMe ul li a {
+    font-size: inherit;
 }
 #ContactMe ul li a:hover {
     color: inherit;
     text-decoration: inherit;
 }
+#ContactMe ul li:active {
+    user-select: all;
+}
 /* ############################################# */
 /* Styling the Footer */
 footer {
-    font-size: small;
+    font-size: var(--footerfontsize);
     text-align: center;
+    width: 100%;
 }
 /* ############################################# */
 /* Media Queries for responsive design */
 @media screen and (min-width: 768px) {
     #AboutMe {
-        max-width: 30%;
+        width: 30%;
     }
     #MyWork {
-        max-width: 70%;
-    }
-    #ContactMe ul {
-        justify-content: left;
+        width: 70%;
     }
     #ContactMe ul li {
         font-weight: 900;
@@ -234,6 +227,6 @@ footer {
         width: 100%;
     }
     .card > h3 {
-        font-size: 65%;
+        font-size: var(--smallfontsize);
     }
 }
