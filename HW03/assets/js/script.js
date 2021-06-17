@@ -25,25 +25,28 @@ function generatePassword() {
   var pwArray = [];
   var j = 0;
   //We want the ability to re-prompt the user for valid inputs if they don't provide them on the first pass without having to reset completely
-  while (true) {
-    try {
-      pwLength = this.prompt("How long would you like the password to be?");
-      console.log(typeof(pwLength));
-      if (typeof(pwLength) !== Number) {
-        throw new Error("The input for Password Length must be an number");
-      } else if (pwLength < pwLengthMin || pwLength > pwLengthMax) {
-        throw new Error("The input for Password Length must be between 8 and 128");
-      } else {
-        pwLength = Math.floor(pwLength);
-        break;
-      }
-    } catch (e) {
-      this.alert("Input Error:", e.message)
-      continue;
-    }
-  }
-} //premature end to test the function
-function dummy() {
+//   while (true) {
+//     try {
+//       pwLength = this.prompt("How long would you like the password to be?");
+//       try {
+
+//       }
+//       console.log(typeof(pwLength));
+//       if (typeof(pwLength) !== Number) {
+//         throw new Error("The input for Password Length must be an number");
+//       } else if (pwLength < pwLengthMin || pwLength > pwLengthMax) {
+//         throw new Error("The input for Password Length must be between 8 and 128");
+//       } else {
+//         pwLength = Math.floor(pwLength);
+//         break;
+//       }
+//     } catch (e) {
+//       this.alert("Input Error:", e.message)
+//       continue;
+//     }
+//   }
+// } //premature end to test the function
+// function dummy() {
   do {
     //alert the user to the requirement and prompt them for their input
     this.alert("The password must be between 8 and 128 characters.");
