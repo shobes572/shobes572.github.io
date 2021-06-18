@@ -12,15 +12,15 @@ function generatePassword() {
   //Defining constant vars 
   var pwLengthMax = 128;
   var pwLengthMin = 8;
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
   var pwCharAvailable = {
-    lowerChars: [false, "abcdefghijklmnopqrstuvwxyz"],
-    upperChars: [false, "abcdefghijklmnopqrstuvwxyz".toUpperCase()],
+    lowerChars: [false, alphabet],
+    upperChars: [false, alphabet.toUpperCase()],
     numbrChars: [false, "0123456789"],
     speclChars: [false, " !\"#$%&'()*+,-./:;<>=?@[]^\\_`{}|~"]
   };
   //Defining input vars & counters
   var pwLength = 0;
-  var randLength = 0;
   var pwCharArray = [];
   var pwArray = [];
   var j = 0;
@@ -29,7 +29,6 @@ function generatePassword() {
     //alert the user to the requirement and prompt them for their input
     this.alert("The password must be a numeric value between 8 and 128 characters.");
     pwLength = parseInt(this.prompt("How long would you like the password to be?"));
-    console.log(pwLength);
     //validate password requirement is met before proceeding
   } while ((isNaN(pwLength)) || (pwLength < pwLengthMin || pwLength > pwLengthMax));
   do {
@@ -56,7 +55,6 @@ function generatePassword() {
     pwArray = pwArray.concat(pwCharArray[Math.floor(Math.random() * pwCharArray.length)])
   }
   //Implementing a shuffle function for the Character Array to remove the the setting for the character guarantee
-  //https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
   for (i=0; i < pwArray.length - 2; i++) {
     var j = Math.floor((Math.random() * (pwArray.length - i)) + i);
     var shuffle1 = pwArray[i];
