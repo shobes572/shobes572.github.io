@@ -34,7 +34,6 @@ function generatePassword() {
   var chartypeEscape = true;
   var pwCharArray = [];
   var pwArray = [];
-  var j = 0;
   //We want the ability to re-prompt the user for valid inputs if they don't provide them on the first pass without having to reset completely
   do {
     pwLength = parseInt(this.prompt("How long would you like the password to be?"));
