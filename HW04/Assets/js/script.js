@@ -91,11 +91,5 @@ function endQuiz() {
         }
     }, 25);
 }
-function displayQuestion(questionObj) {
-    questionEL.text(questionObj.question);
-    for (i=0; i<answerELs.length; i++) {
-        answerELs.eq(i).text(questionObj[`answer${i+1}`]);
-    }
-}
 // page init
 scriptInit();

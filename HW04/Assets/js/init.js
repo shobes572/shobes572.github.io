@@ -41,11 +41,9 @@ function getHighscores() {
 function validateAnswer(questionObj, keypress) {
     if (questionObj.answerc === answerELs.eq(keypress-1).text()) {
         sessionScore += 10;
-        sessionTimer += 2;
         return "C";
     } else {
-        sessionScore -= 10;
-        sessionTimer -= 2;
+        sessionTimer -= 5;
         return "I";
     }
 }
@@ -63,6 +61,13 @@ function stringifyScore(numScore) {
         return `0${numScore}`;
     } else {
         return `00${numScore}`;
+    }
+}
+// function to display the current question and options
+function displayQuestion(questionObj) {
+    questionEL.text(questionObj.question);
+    for (i=0; i<answerELs.length; i++) {
+        answerELs.eq(i).text(questionObj[`answer${i+1}`]);
     }
 }
 // function for generating the object with the quiz questions
