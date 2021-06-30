@@ -4,12 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Assets/css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./Assets/css/style.css" />
-    <title>Document</title>
+    <title>Javascript Quiz</title>
 </head>
-<body>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<body class="bg-dark">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Javascript Quiz</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href=".">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Highscores</a>
+                  <ul class="dropdown-menu bg-dark" id="highscores-menu" aria-labelledby="navbarDropdown">
+                      <li class="dropdown-item text-light"></li>
+                      <li class="dropdown-item text-light"></li>
+                      <li class="dropdown-item text-light"></li>
+                      <li class="dropdown-item text-light"></li>
+                      <li class="dropdown-item text-light"></li>
+                      <li class="dropdown-item text-light"></li>
+                      <li class="dropdown-item text-light"></li>
+                      <li class="dropdown-item text-light"></li>
+                      <li class="dropdown-item text-light"></li>
+                      <li class="dropdown-item text-light"></li>
+                  </ul>
+                </li>
+                <li id="user-score" class="nav-item nav-link">Score: 000</li>
+                <li id="user-timer" class="nav-item nav-link">Timer: 60s</li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to Shobair's Javascript Quiz</h1>
+            <p class="lead">Come one, Come all! Try your hand at this Javascript Quiz and see how you place amongs the other developers who have tried before you.  All questions are multiple choice, you can answer your Number Keys, or press the [S] key to skip.<br>Scoring: </p>
+            <ol class="lead">
+                <li>Correctly answering a question adds two seconds.</li>
+                <li>Incorrectly answering a question removes two seconds.</li>
+                <li>Your Score is computed from the number of questions correctly answered when the timer hits zero.</li>
+                <li>You can earn even more points if you reach the end of the quiz with time remaining.</li>
+            </ol>
+            <a id="begin-button" class="btn btn-primary btn-lg bg-light text-dark" href="#" role="button">Begin Quiz</a>
+        </div>
+        <form id="quiz-form" class="row vw-50 justify-content-center d-none">
+            <div class="form-group text-light">
+                <label for="quiz-question">TEST QUESTION</label>
+                <ol><li></li><li></li><li></li><li></li></ol>
+            </div>
+        </form>
+        <form id="user-submit" class="row vw-50 justify-content-center d-none">
+            <div class="form-group">
+                <label for="userName" class="text-light lead">Username</label>
+                <input type="text" class="form-control my-2" id="userName" placeholder="Enter a Username">
+                <button class="btn btn-lg bg-light text-dark my-2" href="#" type="submit">Submit Score</button>
+              </div>
+        </form>
+        <form id="user-again" class="row vw-50 justify-content-center d-none">
+            <div class="form-group">
+                <label for="playAgain" class="text-light lead">Would you like to try again?</label><br>
+                <button class="btn btn-lg bg-light text-dark my-2" href="#" type="submit">Begin Quiz</button>
+            </div>
+        </form>
+    </main>
+    <footer class="page-footer font-small text-center py-3 pt-4">Developed and Designed by Me, Myself, and I</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="./assets/js/init.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

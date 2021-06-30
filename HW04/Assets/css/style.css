@@ -1,0 +1,16 @@
+:root {
+    --color-1: #ffffff6f;
+    --color-2: #ffffffef;
+}
+/* ############################################# */
+/* Styling the Header Section */
+/* ############################################# */
+/* Styling the Jumbotron */
+.jumbotron {
+    background-color: var(--color-1);
+    color: var(--color-2);
+}
+/* ############################################# */
+/* Styling the Footer */
+/* ############################################# */
+/* Media Queries for responsive design */
