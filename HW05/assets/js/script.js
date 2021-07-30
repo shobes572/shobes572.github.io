@@ -15,7 +15,11 @@ function updateAccordionColors() {
         var tempElement = plannerElements[i];
         var headerTime = moment(tempElement.textContent, "HH:mm").hour();
         if (currentTime.hour() > headerTime) {
-            tempElement.addClass("bg-dark");
+            tempElement.style.background = "red";
+        } else if (currentTime.hour() < headerTime) {
+            tempElement.style.background = "green";
+        } else {
+            tempElement.style.background = "blue";
         }
     }
 }
